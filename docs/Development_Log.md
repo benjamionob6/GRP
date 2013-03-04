@@ -58,7 +58,7 @@ all the sensor s associated with a process model can be performed as
 followed after the model is loaded.
 
 
-<code>
+```c#
 do{
 
 SensorDescription = axFlash.GetVariable(String.Format("EDigSens{0}",
@@ -74,7 +74,7 @@ SensorDescription, SensorDescriptionIndex);
 SensorDescriptionIndex++;
 
 } while (SensorDescription != "" && SensorDescriptionIndex <= 16);
-</code>
+```
 
 There does not appear to be any event that fires as the sensor values
 change, so as a result, the sensor values have to be polled constantly
