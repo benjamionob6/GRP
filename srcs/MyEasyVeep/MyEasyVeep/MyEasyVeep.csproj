@@ -8,8 +8,8 @@
     <ProjectGuid>{7737AEAB-3AE5-4722-9CBB-B0FE41FE6011}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SwfTest</RootNamespace>
-    <AssemblyName>SwfTest</AssemblyName>
+    <RootNamespace>MyEasyVeep</RootNamespace>
+    <AssemblyName>MyEasyVeep</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>

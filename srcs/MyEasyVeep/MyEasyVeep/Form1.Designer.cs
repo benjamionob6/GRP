@@ -1,4 +1,4 @@
-﻿namespace SwfTest
+﻿namespace MyEasyVeep
 {
     partial class Form1
     {

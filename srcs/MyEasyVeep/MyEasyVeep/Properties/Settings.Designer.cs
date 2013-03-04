@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SwfTest.Properties
+namespace MyEasyVeep.Properties
 {
 
 

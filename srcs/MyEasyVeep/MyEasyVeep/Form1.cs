@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
 
-namespace SwfTest
+namespace MyEasyVeep
 {
     public partial class Form1 : Form
     {
