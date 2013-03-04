@@ -41,14 +41,14 @@ the Actionscript code. This allowed for important variable names to be
 extracted so that they could be read and modified by the custom EasyVeep
 implementation. Some important variable names are as follows:
 
-        |Variable Name|Purpose|
-        |EprgName| English Program Name|
-        |EprgLeirasX| English Program Description ( X = 0..10)|
-        |EDigSensX|  English Sensor Description ( X = 1..16)|
-        |EDigActX| English Actuator Description (X = 1..16)|
-        |DAX Digital| Actuator Value ( X =1..16)|
-        |DSX Digital| Sensor Value (X=1..16)|
-        |ASX Analog| Sensor Value ( X=1..16)|
+|Variable Name|Purpose|
+|EprgName| English Program Name|
+|EprgLeirasX| English Program Description ( X = 0..10)|
+|EDigSensX|  English Sensor Description ( X = 1..16)|
+|EDigActX| English Actuator Description (X = 1..16)|
+|DAX Digital| Actuator Value ( X =1..16)|
+|DSX Digital| Sensor Value (X=1..16)|
+|ASX Analog| Sensor Value ( X=1..16)|
 
 These variables can be accessed in the using the GetVariable and
 SetVariable functions of the Flash ActiveX Control. For example, finding
@@ -58,19 +58,11 @@ followed after the model is loaded.
 
 ```csharp
 do{
+        SensorDescription = axFlash.GetVariable(String.Format("EDigSens{0}", SensorDescriptionIndex));
 
-SensorDescription = axFlash.GetVariable(String.Format("EDigSens{0}",
-
-SensorDescriptionIndex));
-
-if ( SensorDescription != "" )
-
-movieInfo.Sensors[SensorDescriptionIndex-1] = new DigitalSensor(
-
-SensorDescription, SensorDescriptionIndex);
-
-SensorDescriptionIndex++;
-
+        if ( SensorDescription != "" )
+                movieInfo.Sensors[SensorDescriptionIndex-1] = new DigitalSensor( SensorDescription, SensorDescriptionIndex);
+        SensorDescriptionIndex++;
 } while (SensorDescription != "" && SensorDescriptionIndex <= 16);
 ```
 
