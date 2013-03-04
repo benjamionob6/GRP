@@ -9,13 +9,17 @@ Originally, Sothink SWF Decompiler was used to view the action script variables 
 An example of flasms power when combined with \*nix commands is show below to pull the English names and details of all sensors and actuators for all swfs in a Github friendly markdown format.
 
 ```bash
-for f in *.swf; do printf "\n\n"; flasm -d $f  | awk "/push *'(\w+SensNum|\w+ActNum|EDig|EAnalog|fileName|EprgName)/" | sed "s/|//g" | sed "s/ *push *'\([^,]*\)', '\([^']*\)'/|\1|\2|/g" | awk '!/\|\|/' ; done;
+for f in *.swf; do printf "\n _ $f _ \n\n|Field|Value|\n|---|---|\n"; flasm -d $f  | awk "/push *'(\w+SensNum|\w+ActNum|EDig|EAnalog|fileName|EprgName)/" | sed "s/|//g" | sed "s/ *push *'\([^,]*\)', '\([^']*\)'/|\1|\2|/g" | awk '!/\|\|/' ; done;
 ```
 
 This one liner loops through all swf files in the directory. It prints a few newlines before each dump to allow table seperation and then uses and awk to print only lines where assignment takes place (*push*) and the variables of interest (Actuators, Names, Senors) are. The first sed pulls out and stray pipes before another sed formats it as a pipe dlimeted table. Blank entries were prevented form behing show due the second awk.
 
 This is the result of the script showing the inputs and outputs along with other details for each of the swfs taken from EasyVeep.
 
+ _10.swf_ 
+
+|Field|Value|
+|---|---|
 |fileName|10.swf|
 |DigSensNum|10|
 |DigActNum|6|
@@ -39,7 +43,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct5|Switch off the button <<, >>|
 |EDigAct6|Switch off the button STOP, PLAY|
 
+ _11.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|11.swf|
 |DigSensNum|7|
 |DigActNum|5|
@@ -59,7 +66,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct4|Switch reverse direction (blue)|
 |EDigAct5|Mark the treasure|
 
+ _12.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|12.swf|
 |DigSensNum|8|
 |DigActNum|5|
@@ -80,7 +90,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct4|Heat|
 |EDigAct5|Cooling|
 
+ _13.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|13.swf|
 |DigSensNum|11|
 |DigActNum|6|
@@ -105,7 +118,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct5|Free sign on left side|
 |EDigAct6|Free sign on right side|
 
+ _14.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|14.swf|
 |DigSensNum|6|
 |DigActNum|6|
@@ -125,7 +141,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct5|Red signal OUT|
 |EDigAct6|Green signal OUT|
 
+ _15.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|tp301_1.swf|
 |DigSensNum|1|
 |DigActNum|1|
@@ -135,7 +154,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigSens1|Lamp button|
 |EDigAct1|Lamp|
 
+ _16.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|tp301_2.swf|
 |DigSensNum|3|
 |DigActNum|1|
@@ -147,7 +169,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigSens3|Piston in + end position|
 |EDigAct1|Valve for cylinder|
 
+ _17.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|15.swf|
 |DigSensNum|16|
 |DigActNum|16|
@@ -187,7 +212,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct15|I/O Bit 14|
 |EDigAct16|I/O Bit 15|
 
+ _18.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|18.swf|
 |DigSensNum|8|
 |DigActNum|1|
@@ -204,7 +232,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigSens8|Safe door open|
 |EDigAct1|Locks safe|
 
+ _19.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|19.swf|
 |DigSensNum|5|
 |DigActNum|4|
@@ -221,7 +252,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct3|Operates horn|
 |EDigAct4|Activates alarm system|
 
+ _1.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|1.swf|
 |DigSensNum|6|
 |DigActNum|4|
@@ -239,7 +273,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct3|Outlet valve|
 |EDigAct4|Heating|
 
+ _20.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|20.swf|
 |DigSensNum|10|
 |DigActNum|7|
@@ -264,7 +301,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct6|Q1 lamp|
 |EDigAct7|Q2 lamp|
 
+ _21.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|21.swf|
 |DigSensNum|4|
 |DigActNum|1|
@@ -277,7 +317,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigSens4|Press cylinder in lower stop position|
 |EDigAct1|Valve operating the press cylinder |
 
+ _22.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|22.swf|
 |DigSensNum|1|
 |DigActNum|2|
@@ -288,7 +331,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct1|Switch on phone|
 |EDigAct2|LCD backlight|
 
+ _23.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|23.swf|
 |DigSensNum|6|
 |DigActNum|7|
@@ -309,7 +355,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct6|Switch on light (2nd floor)|
 |EDigAct7|Switch on light (1st floor)|
 
+ _24.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|24.swf|
 |DigSensNum|3|
 |DigActNum|3|
@@ -323,7 +372,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct2|Start lower conveyor belt|
 |EDigAct3|Actuator for changing boxes|
 
+ _25.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|25.swf|
 |DigSensNum|3|
 |DigActNum|2|
@@ -336,7 +388,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct1|Activate motor for garage door|
 |EDigAct2|Change direction of motion|
 
+ _26.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|26.swf|
 |DigSensNum|6|
 |DigActNum|3|
@@ -353,7 +408,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct2|Move lifting cylinder to initial position |
 |EDigAct3|Extend thrust cylinder|
 
+ _27.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|27.swf|
 |DigSensNum|10|
 |DigActNum|7|
@@ -378,7 +436,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct6|Q1 Lamp|
 |EDigAct7|Q2 Lamp|
 
+ _28.swf_ 
 
+|Field|Value|
+|---|---|
 |fileName|28.swf|
 |DigSensNum|3|
 |DigActNum|1|
@@ -390,7 +451,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigSens3|Pushbutton|
 |EDigAct1|Valve|
 
+ _ 29.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|30.swf|
 |DigSensNum|8|
 |DigActNum|8|
@@ -414,7 +478,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct7|Input Bit 6.|
 |EDigAct8|Input Bit 7.|
 
+ _ 2.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|2.swf|
 |DigSensNum|6|
 |DigActNum|3|
@@ -431,7 +498,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct2|Valve for 2nd cylinder|
 |EDigAct3|Valve for 3rd cylinder|
 
+ _ 30.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|30.swf|
 |DigSensNum|0|
 |DigActNum|0|
@@ -439,7 +509,10 @@ This is the result of the script showing the inputs and outputs along with other
 |AnalogActNum|0|
 |EprgName|*** NEW IDEAS ***|
 
+ _ 3.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|3.swf|
 |DigSensNum|12|
 |DigActNum|5|
@@ -464,7 +537,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct4|Open the door on 1. floor|
 |EDigAct5|Open the door on 2. floor|
 
+ _ 4.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|4.swf|
 |DigSensNum|6|
 |DigActNum|7|
@@ -485,7 +561,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct6|Change direction of rotation|
 |EDigAct7|Door lock|
 
+ _ 5.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|5.swf|
 |DigSensNum|12|
 |DigActNum|8|
@@ -513,7 +592,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct7|7. segment|
 |EDigAct8|2.+3. segment (for number 1)|
 
+ _ 6.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|6.swf|
 |DigSensNum|7|
 |DigActNum|8|
@@ -536,7 +618,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct7|Labeling white wine|
 |EDigAct8|Production line (motor)|
 
+ _ 7.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|7.swf|
 |DigSensNum|6|
 |DigActNum|3|
@@ -553,7 +638,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct2|Gate for 1. storage|
 |EDigAct3|Gate for 2. storage|
 
+ _ 8.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|8.swf|
 |DigSensNum|8|
 |DigActNum|3|
@@ -572,7 +660,10 @@ This is the result of the script showing the inputs and outputs along with other
 |EDigAct2|Switch the white signal (clear)|
 |EDigAct3|Switch the red signal|
 
+ _ 9.swf _ 
 
+|Field|Value|
+|---|---|
 |fileName|9.swf|
 |DigSensNum|3|
 |DigActNum|5|
