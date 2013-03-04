@@ -41,7 +41,8 @@ the Actionscript code. This allowed for important variable names to be
 extracted so that they could be read and modified by the custom EasyVeep
 implementation. Some important variable names are as follows:
 
-|Variable Name|Purpose|
+| Variable Name | Purpose |
+|---------------|---------|
 |EprgName| English Program Name|
 |EprgLeirasX| English Program Description ( X = 0..10)|
 |EDigSensX|  English Sensor Description ( X = 1..16)|
@@ -61,8 +62,11 @@ do{
         SensorDescription = axFlash.GetVariable(String.Format("EDigSens{0}", SensorDescriptionIndex));
 
         if ( SensorDescription != "" )
-                movieInfo.Sensors[SensorDescriptionIndex-1] = new DigitalSensor( SensorDescription, SensorDescriptionIndex);
+                movieInfo.Sensors[SensorDescriptionIndex-1] = 
+                        new DigitalSensor( SensorDescription, SensorDescriptionIndex);
+        
         SensorDescriptionIndex++;
+        
 } while (SensorDescription != "" && SensorDescriptionIndex <= 16);
 ```
 
@@ -78,9 +82,9 @@ March 4, 2013
 
 Primary goals:
 
-* Move to github
-* Clean up source codes/refactor
-* Continue implementation on MyEasyVeep
+- [x] Move to github
+- [ ] Clean up source codes/refactor
+- [ ] Continue implementation on MyEasyVeep
 
 A repository was created on github in order to replace the confusing,
 overly verbose SVN repository that was being used. Github was selected
