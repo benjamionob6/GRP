@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SwfTest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("MyEasyVeep")]
+[assembly: AssemblyDescription("A custom implementation of EasyVeep")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("SwfTest")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2013")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("EasyVeep")]
+[assembly: AssemblyCopyright("Copyright © Benjamin O'Brien 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
