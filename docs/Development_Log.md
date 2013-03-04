@@ -9,10 +9,9 @@ point. Future updates will be logged into this file as necessary and
 will hopefully allow for copy-paste when it comes time to write the GRP
 report.
 
-\
 
-February 25 – February 27
-
+February 25 thru  February 27
+-----------------------------------------
 **Problems with EasyVeep and a Custom EasyVeep Implementation**
 
 The purpose of this project is to allow physical real time targets to
@@ -42,45 +41,24 @@ the Actionscript code. This allowed for important variable names to be
 extracted so that they could be read and modified by the custom EasyVeep
 implementation. Some important variable names are as follows:
 
-**ActionScript****Variable Name**
-
-**Purpose**
-
-EprgName
-
-English Program Name
-
-EprgLeirasX
-
-English Program Description ( X = 0..10)
-
-EDigSensX
-
-English Sensor Description ( X = 1..16)
-
-EDigActX
-
-English Actuator Description (X = 1..16)
-
-DAX
-
-Digital Actuator Value ( X =1..16)
-
-DSX
-
-Digital Sensor Value (X=1..16)
-
-ASX
-
-Analog Sensor Value ( X=1..16)
+<table>
+        <tr> <th>ActionScript Variable Name</th> <th>Purpose</th> </tr>
+        <tr> <td> EprgName </td> <td> English Program Name </td> </tr>
+        <tr> <td> EprgLeirasX</td> <td> English Program Description ( X = 0..10)</td> </tr> 
+        <tr><td> EDigSensX </td><td> English Sensor Description ( X = 1..16)</td></tr>
+        <tr><td>EDigActX</td><td> English Actuator Description (X = 1..16)</td></tr>
+        <tr><td>DAX</td><td> Digital Actuator Value ( X =1..16)</td></tr>
+        <tr><td>DSX</td><td> Digital Sensor Value (X=1..16)</td></tr>
+        <tr><td>ASX</td><td> Analog Sensor Value ( X=1..16) </td></tr>
+</table>
 
 These variables can be accessed in the using the GetVariable and
 SetVariable functions of the Flash ActiveX Control. For example, finding
 all the sensor s associated with a process model can be performed as
 followed after the model is loaded.
 
-\
 
+<code>
 do{
 
 SensorDescription = axFlash.GetVariable(String.Format("EDigSens{0}",
@@ -96,8 +74,9 @@ SensorDescription, SensorDescriptionIndex);
 SensorDescriptionIndex++;
 
 } while (SensorDescription != "" && SensorDescriptionIndex <= 16);
+</code>
 
-There does not appear to be any event the fires as the sensor values
+There does not appear to be any event that fires as the sensor values
 change, so as a result, the sensor values have to be polled constantly
 to determine when a change has occurred. More development to follow…
 Primary concern is falling over to a digital input/output when the
@@ -105,14 +84,13 @@ simulation supports analog values. This will require a bit more testing
 to figure out the best way.
 
 March 4, 2013
+----------------------------
 
 Primary goals:
 
-· Move to github
-
-· Clean up source codes/refactor
-
-· Continue implementation on MyEasyVeep
+* Move to github
+* Clean up source codes/refactor
+* Continue implementation on MyEasyVeep
 
 A repository was created on github in order to replace the confusing,
 overly verbose SVN repository that was being used. Github was selected
