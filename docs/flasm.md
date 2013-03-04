@@ -14,6 +14,15 @@ for f in *.swf; do printf "\n _ $f _ \n\n|Field|Value|\n|---|---|\n"; flasm -d $
 
 This one liner loops through all swf files in the directory. It prints a few newlines before each dump to allow table seperation and then uses and awk to print only lines where assignment takes place (*push*) and the variables of interest (Actuators, Names, Senors) are. The first sed pulls out and stray pipes before another sed formats it as a pipe dlimeted table. Blank entries were prevented form behing show due the second awk.
 
+
+Things Learned from flash
+--------------------------------
+It was found that the values of the EDigSens and EDigAct were constant (only one push every occurred to the variable) and that they could only hold the name of the sensor or actuator. The actual values (on or off, tripped or untripped) were stored elsewhere. Grepping through the output of flasm turned up variables matching the regular expression __D[A|S]\d+__. Here, DA1 - DA16 would represent the digital values assigned to actuators 1 - 16. Similarly, DS1 - DS16 represented the values held by the digital sensors. Assuming that analog values would be handled the same way, the output was grepped for __A[A|S]\d__. No matches were found. After quickly searching through the previous results, it was shown that not a single process model leveraged the analog sensor abilities despite the inclusion of fields to specify them. This means that __ALL PROCESS ARE COMPLETLY DIGITAL__, which means the protocol and the MyEasyVeep application do not have to support analog values. This was an assumption made earlier, since the Arcom boxes themselves cannot create or read analog values, but it is now confirmed that no simulations will be locked out due to this restriction.
+
+Additionally, it was shown that only one swf file, one of which does not actually imitate a process but only shows the state of the EasyPort, uses more than 12 inputs or outputs. This means the Stellaris chip is still a valid solution if the scope is limited only to these simulations.
+
+
+
 This is the result of the script showing the inputs and outputs along with other details for each of the swfs taken from EasyVeep.
 
  _10.swf_ 
