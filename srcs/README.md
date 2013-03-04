@@ -1,7 +1,7 @@
 Software Sources
 =======================
 
-This directory contains all software and firmware sources. For details on each individual project, check the README in that project's sub directory. Desktop projects will typically be in a Visual Studio 2010 project, while firmware projects will either be in TICC5 project directories or possibly GNU Linux style projects. Project descriptions follow.
+This directory contains all software and firmware sources. For details on each individual project, check the README in that project's sub directory. Desktop projects will typically be in a Visual Studio 2010 project, while firmware projects will either be in TICCS5 project directories or possibly GNU Linux style directories. Project descriptions follow.
 
 MyEasyVeep
 -------------------
