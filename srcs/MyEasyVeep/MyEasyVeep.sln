@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEasyVeep", "SwfTest\SwfTest.csproj", "{7737AEAB-3AE5-4722-9CBB-B0FE41FE6011}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEasyVeep", "MyEasyVeep\MyEasyVeep.csproj", "{7737AEAB-3AE5-4722-9CBB-B0FE41FE6011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
