@@ -83,7 +83,7 @@ March 4, 2013
 Primary goals:
 
 - [x] Move to github
-- [ ] Clean up source codes/refactor
+- [x] Clean up source codes/refactor
 - [ ] Continue implementation on MyEasyVeep
 
 A repository was created on github in order to replace the confusing,
@@ -104,4 +104,17 @@ the writing of this note (11:22AM) only the MyEasyVeep application
 source has been uploaded, but the READMEs have improved navigation and
 documentation considerably with minimal effort.
 
+Minimal documentation of the HW has made it to Github.
 
+More analysis was done of the target swfs using flasm. Details can be
+found in flasm.md on Github. The overall summary is that there are no
+models requiring more than 12 pins in either direction and that there
+are no models requiring analog interfaces. Therefore, all models should
+be able to interface with a Stellaris chip if the choice is made to go
+in that direction. Details of inputs and outputs for each model have been
+included in flasm.md. It was found that directly modifying DS[0-16] or DA[0-16]
+would effect the Sensors and Actuators of the simulation, repsectively.
+
+With knowledge about the structure of the swfs, it should be possible to
+create new ones easily enough, but research into that is being put off until
+more progress is made on the main work products.
