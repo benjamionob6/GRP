@@ -20,7 +20,7 @@ Documents
 ------------------------------------
 Documents will be stored in the docs folder.
 Currently the docs folder has:
-> Development Logs (notes taken while developing software)
+> hw ( Hardware Information )
+> Development\_Log (notes taken while developing software)
 
 
-README will be updated as commits are made
